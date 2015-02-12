@@ -2,10 +2,39 @@ doctype html
 html(lang='en')
   head
     meta(charset='utf-8')
-    title Prototype
+    title Death by Zip
     link(rel='stylesheet', href='/style.css')
   body
-    h1 Hello, World
+    h1 Death by Zip Code
+    label Pick a Year
+    select#year
+      - for(var i = 1999; i < 2013; i++)
+        option= i
+    button#get-data Get Data
+    
+    label Pick a Type
+    select#type
+      //- #HTD.types Heart Disease
+      //- #CAN.types Cancer
+      //- #STK.types Stroke
+      //- #CLD.types Chronic Lower Respiratory Disease
+      //- #INJ.types Unintentional Injuries
+      //- #PNF.types Pneumonia and Influenza
+      //- #DIA.types Diabetes
+      //- #ALZ.types Alzheimer Disease
+      //- #LIV.types Chronic Liver Disease
+      //- #SUI.types Suicides
+      //- #HYP.types Hypertension Disease
+      //- #HOM.types Homocides         
+      //- #OTH.types Other Causes
+      //- 
+      //- - for(var i = 'types'; i < 'types'.length; i++)
+      //-   option= i
+      - var types = [{id:'HTD', name: "Heart Disease"}, {id:'CAN', name:'Cancer'}, {id:'STK', name:"Stroke"}, {id:'CLD'}, {id:'INJ'}, {id:'PNF'}, {id:'DIA'}, {id:'ALZ'}, {id:'LIV'}, {id:'SUI'}, {id:'HYP'}, {id:'HOM'}, {id:'OTH'}]
+      - each o in types
+        option(types=o.types)= o.name
+    button#get-type Get Type
+    
     script(src='/vendor/lodash/lodash.js')
     script(src='/vendor/jquery/dist/jquery.js')
     script(src='/main.js')
