@@ -10,30 +10,14 @@ html(lang='en')
     select#year
       - for(var i = 1999; i < 2013; i++)
         option= i
-    button#get-data Get Data
+    //- button#get-data Get Data
     
     label Pick a Type
     select#type
-      //- #HTD.types Heart Disease
-      //- #CAN.types Cancer
-      //- #STK.types Stroke
-      //- #CLD.types Chronic Lower Respiratory Disease
-      //- #INJ.types Unintentional Injuries
-      //- #PNF.types Pneumonia and Influenza
-      //- #DIA.types Diabetes
-      //- #ALZ.types Alzheimer Disease
-      //- #LIV.types Chronic Liver Disease
-      //- #SUI.types Suicides
-      //- #HYP.types Hypertension Disease
-      //- #HOM.types Homocides         
-      //- #OTH.types Other Causes
-      //- 
-      //- - for(var i = 'types'; i < 'types'.length; i++)
-      //-   option= i
-      - var types = [{id:'HTD', name: "Heart Disease"}, {id:'CAN', name:'Cancer'}, {id:'STK', name:"Stroke"}, {id:'CLD'}, {id:'INJ'}, {id:'PNF'}, {id:'DIA'}, {id:'ALZ'}, {id:'LIV'}, {id:'SUI'}, {id:'HYP'}, {id:'HOM'}, {id:'OTH'}]
-      - each o in types
-        option(types=o.types)= o.name
-    button#get-type Get Type
+      - var illness = [{id:'htd', name:'Heart Disease'}, {id:'can', name:'Cancer'}, {id:'stk', name:'Stroke'}, {id:'cld', name:'Chronic Liver Disease'}, {id:'inj', name:'Unintentional Injury'}, {id:'pnf', name:'Pneumonia and Influenza'}, {id:'dia', name:'Diabetes'}, {id:'alz', name:'Alzheimer Disease'}, {id:'liv', name:'Chronic Liver Disease'}, {id:'sui', name:'Suicides'}, {id:'hyp', name:'Hypertension Disease'}, {id:'hom', name:'Homocides'}, {id:'oth', name:'Other Causes'}]
+      - each o in illness
+        option(value = o.id)= o.name
+    button#get-type Get Data
     
     script(src='/vendor/lodash/lodash.js')
     script(src='/vendor/jquery/dist/jquery.js')
